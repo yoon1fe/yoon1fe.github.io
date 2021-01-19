@@ -1,0 +1,8 @@
+I"�<p>첫 글입니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">First</span><span class="o">{</span>
+	<span class="kd">static</span> <span class="nc">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">"첫 글이요"</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+:ET
