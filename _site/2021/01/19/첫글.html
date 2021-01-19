@@ -58,6 +58,7 @@
 <title>첫글 | 하고싶은거 하는블로그</title>
 <meta name="generator" content="Jekyll v4.2.0" />
 <meta property="og:title" content="첫글" />
+<meta name="author" content="yoon1fe" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="첫 글입니다. 테스트 테스트 static String str = &quot;첫 글이요&quot;;" />
 <meta property="og:description" content="첫 글입니다. 테스트 테스트 static String str = &quot;첫 글이요&quot;;" />
@@ -69,7 +70,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="첫글" />
 <script type="application/ld+json">
-{"description":"첫 글입니다. 테스트 테스트 static String str = &quot;첫 글이요&quot;;","@type":"BlogPosting","url":"https://yoon1fe.github.io/2021/01/19/%EC%B2%AB%EA%B8%80.html","headline":"첫글","dateModified":"2021-01-19T00:00:00+09:00","datePublished":"2021-01-19T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://yoon1fe.github.io/2021/01/19/%EC%B2%AB%EA%B8%80.html"},"@context":"https://schema.org"}</script>
+{"description":"첫 글입니다. 테스트 테스트 static String str = &quot;첫 글이요&quot;;","@type":"BlogPosting","headline":"첫글","dateModified":"2021-01-19T00:00:00+09:00","datePublished":"2021-01-19T00:00:00+09:00","url":"https://yoon1fe.github.io/2021/01/19/%EC%B2%AB%EA%B8%80.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://yoon1fe.github.io/2021/01/19/%EC%B2%AB%EA%B8%80.html"},"author":{"@type":"Person","name":"yoon1fe"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -178,19 +179,13 @@
             
             
         
-            
-            
-        
-            
-            
-        
     </ul>
 
 	</nav>
 </header>
 
     <div class="content">
-      <article >
+      <article class="feature-image" >
   <header id="main" style="">
     <div class="title-padder">
       
@@ -198,10 +193,12 @@
       
 
 
-<div class="post-info">
+<div class="post-info"><a href="https://github.com/yoon1fe" target="_blank">
+      <img src="https://yoon1fe.github.io/assets/img/cat.png">
+    
     <p class="meta">
-      January 19, 2021
-    </p></div>
+      yoon1fe - January 19, 2021
+    </p></a></div>
 
       
     </div>
@@ -317,12 +314,19 @@
 
   <div id="post-nav">
     
+    <div id="previous-post">
+        <a alt="입문교육 회고" href="/2021/01/20/%EC%9E%85%EB%AC%B8%EA%B5%90%EC%9C%A1%ED%9A%8C%EA%B3%A0.html">
+            <p>Previous post</p>
+            입문교육 회고
+        </a>
+    </div>
+    
 
     
     <div id="next-post">
-        <a alt="Sample post" href="/2019/06/30/sample-post.html">
+        <a alt="Feature images" href="/2014/11/29/feature-images.html">
             <p>Next post</p>
-            Sample post
+            Feature images
         </a>
     </div>
     
@@ -333,10 +337,16 @@
 <!-- To change color of links in the page -->
 <style>
   
+  .feature-image a { color: orange !important; }
+  div#post-nav a { color: orange !important; }
+  footer a { color: orange !important; }
+  .site-header nav a:hover {  color: orange !important; }
+  header#main { background-color: orange !important; }
+  
 
   header#main {
     background-repeat:no-repeat;
-  
+  background-image: url('/assets/img/lineart.png');  
   }
 </style>
 
