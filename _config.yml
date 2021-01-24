@@ -3,7 +3,7 @@ baseurl: ""
 url: "https://yoon1fe.github.io"
 
 # THEME-SPECIFIC CONFIGURATION
-title: 하고싶은거 하는블로그                                    # site's title
+title: 하고 싶은거 하는 블로그                                    # site's title
 # description: "A website with blog posts and pages"      # used by search engines
 avatar: assets/img/cat.png                         # Empty for no avatar in navbar
 favicon: assets/favicon.ico                             # Icon displayed in the tab
