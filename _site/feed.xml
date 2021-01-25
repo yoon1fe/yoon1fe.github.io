@@ -1,4 +1,51 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://yoon1fe.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://yoon1fe.github.io/" rel="alternate" type="text/html" /><updated>2021-01-24T17:50:23+09:00</updated><id>https://yoon1fe.github.io/feed.xml</id><title type="html">하고싶은거 하는블로그</title><entry><title type="html">기술 교육 1주차</title><link href="https://yoon1fe.github.io/2021/01/24/%EC%9E%85%EB%AC%B8%EA%B5%90%EC%9C%A1%ED%9A%8C%EA%B3%A0.html" rel="alternate" type="text/html" title="기술 교육 1주차" /><published>2021-01-24T00:00:00+09:00</published><updated>2021-01-24T00:00:00+09:00</updated><id>https://yoon1fe.github.io/2021/01/24/%EC%9E%85%EB%AC%B8%EA%B5%90%EC%9C%A1%ED%9A%8C%EA%B3%A0</id><content type="html" xml:base="https://yoon1fe.github.io/2021/01/24/%EC%9E%85%EB%AC%B8%EA%B5%90%EC%9C%A1%ED%9A%8C%EA%B3%A0.html">&lt;!--more--&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://yoon1fe.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://yoon1fe.github.io/" rel="alternate" type="text/html" /><updated>2021-01-25T14:08:28+09:00</updated><id>https://yoon1fe.github.io/feed.xml</id><title type="html">하고 싶은거 하는 블로그</title><entry><title type="html">Hoisting</title><link href="https://yoon1fe.github.io/2021/01/25/Hoisting.html" rel="alternate" type="text/html" title="Hoisting" /><published>2021-01-25T00:00:00+09:00</published><updated>2021-01-25T00:00:00+09:00</updated><id>https://yoon1fe.github.io/2021/01/25/Hoisting</id><content type="html" xml:base="https://yoon1fe.github.io/2021/01/25/Hoisting.html">&lt;!--more--&gt;
+
+&lt;p&gt;자바 스크립트는 인터프리터에 의해 한 줄씩 순차적으로 실행됩니다.
+&lt;br /&gt;
+그럼 다음 코드의 실행 결과는 어떻게 될까요?&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;score&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// undefined&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;score&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 변수 선언문&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;
+score란 변수가 선언되기 전에 참조를 하려고 합니다. 하지만 참조 에러(ReferenceError)가 발생하지 않고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefined&lt;/code&gt;가 출력됩니다. 그 이유는 바로 &lt;strong&gt;변수 선언이 런타임 시점 전 단계에서 먼저 실행&lt;/strong&gt;되기 때문입니다.&lt;/p&gt;
+
+&lt;p&gt;자바스크립트 엔진은 소스코드를 한 줄씩 순차적으로 실행하기에 앞서 평가 과정을 거치며 코드를 실행하기 위한 준비를 합니다. 즉, 자바스크립트 엔진은 소스코드를 두 개의 과정, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;평가&lt;/code&gt;와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;실행&lt;/code&gt;으로 나누어 처리합니다.&lt;/p&gt;
+
+&lt;p&gt;이 때 소스코드 평가 과정에서 자바스크립트 엔진은 변수 선언을 포함한 모든 선언문(변수 선언문, 함수 선언문 등)을 소스코드에서 찾아서 먼저 실행합니다. 그리고 소스코드의 평가 과정이 끝나고 나면 선언문을 제외한 나머지 소스코드를 한 줄씩 순차적으로 실행하는 것입니다.&lt;/p&gt;
+
+&lt;p&gt;이처럼 변수 선언문이 코드의 맨 위로 끌어 올려진 것처럼 동작하는 자바스크립트 고유의 특징을 &lt;strong&gt;변수 호이스팅(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;variable hoisting&lt;/code&gt;)&lt;/strong&gt;이라고 합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://lk.co.kr/storage/lk/ko/catalogue/2018/01/12/gFcUcAi1KCJ7w4NCxdtVYi4j8IiIfQ0hsdds8vAA_sm.jpeg&quot; alt=&quot;&quot; width=&quot;45%&quot; align=&quot;center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이게 호이스트랩니다. 무언가를 끌어 올리는 장치져. 그래서 자바스크립트에서의 호이스팅에 대해 많이들 오해하는 부분이 있습니다.&lt;br /&gt;
+많은 자료에서 호이스팅을 변수 및 함수 선언이 물리적으로 작성한 코드의 상단으로 옮겨지는 것으로 말하지만, 실제로는 그렇지 않다는 것입니다. 저 또한 실제 물리적으로도 올라가는줄 알았습니다.&lt;br /&gt;
+하지만 호이스팅은 변수 및 함수 선언은 &lt;strong&gt;컴파일 단계에서 메모리에 저장&lt;/strong&gt;되지만, 코드에서 입력한 위치와 동일한 부분에 코드가 위치하게 됩니다.&lt;/p&gt;
+
+&lt;p&gt;또한, 자바스크립트는 초기화가 아닌 &lt;strong&gt;선언&lt;/strong&gt;만 끌어올립니다(hoist). 만약 변수를 선언한 뒤 나중에 초기화시켜 사용한다면, 그 값은 undefined로 지정됩니다. 이는 아래의 코드로 확인해 볼 수 있습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// x 초기화&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// '1 undefined'&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+
+&lt;span class=&quot;c1&quot;&gt;// 아래 코드는 이전 코드와 같은 방식으로 동작합니다.&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Initialize x&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Declare y&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// '1 undefined'&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Initialize y&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;reference&quot;&gt;Reference&lt;/h5&gt;
+&lt;h5 id=&quot;모던-자바스크립트-deep-dive자바스크립트의-기본-개념과-동작-원리&quot;&gt;&lt;a href=&quot;http://www.yes24.com/Product/Goods/92742567&quot; target=&quot;_blank&quot;&gt;모던 자바스크립트 Deep Dive:자바스크립트의 기본 개념과 동작 원리&lt;/a&gt;&lt;br /&gt;&lt;/h5&gt;
+&lt;h5 id=&quot;mozilla-hoisting&quot;&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Glossary/Hoisting&quot; target=&quot;blank&quot;&gt;Mozilla Hoisting&lt;/a&gt;&lt;/h5&gt;</content><author><name>yoon1fe</name></author><category term="js" /><category term="JavaScript" /><category term="hoisting" /><summary type="html"></summary></entry><entry><title type="html">기술 교육 1주차</title><link href="https://yoon1fe.github.io/2021/01/24/%EC%9E%85%EB%AC%B8%EA%B5%90%EC%9C%A1%ED%9A%8C%EA%B3%A0.html" rel="alternate" type="text/html" title="기술 교육 1주차" /><published>2021-01-24T00:00:00+09:00</published><updated>2021-01-24T00:00:00+09:00</updated><id>https://yoon1fe.github.io/2021/01/24/%EC%9E%85%EB%AC%B8%EA%B5%90%EC%9C%A1%ED%9A%8C%EA%B3%A0</id><content type="html" xml:base="https://yoon1fe.github.io/2021/01/24/%EC%9E%85%EB%AC%B8%EA%B5%90%EC%9C%A1%ED%9A%8C%EA%B3%A0.html">&lt;!--more--&gt;
 
 &lt;p&gt;1월 4일 입사하고 벌써 2주가 훌쩍 지났습니다.&lt;br /&gt; 
 지난 2주간은 입문 교육 후, 베이스 캠프라고 불리는 9 (+ 1) 주 간의 기술 교육이 시작되었습니다. &lt;br /&gt;

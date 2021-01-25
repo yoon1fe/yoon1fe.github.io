@@ -1,0 +1,66 @@
+I"�<!--more-->
+
+<p>자바 스크립트는 인터프리터에 의해 한 줄씩 순차적으로 실행됩니다.
+<br />
+그럼 다음 코드의 실행 결과는 어떻게 될까요?</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">score</span><span class="p">);</span> <span class="c1">// undefined</span>
+
+<span class="kd">var</span> <span class="nx">score</span><span class="p">;</span>  <span class="c1">// 변수 선언문</span>
+</code></pre></div></div>
+<p><br />
+score란 변수가 선언되기 전에 참조를 하려고 합니다. 하지만 참조 에러(ReferenceError)가 발생하지 않고 undefined 가 출력됩니다. 그 이유는 바로 <strong>변수 선언이 런타임 시점 전 단계에서 먼저 실행</strong>되기 때문입니다.</p>
+
+<p>자바스크립트 엔진은 소스코드를 한 줄씩 순차적으로 실행하기에 앞서 평가 과정을 거치며 코드를 실행하기 위한 준비를 합니다. 즉, 자바스크립트 엔진은 소스코드를 두 개의 과정, <code class="language-plaintext highlighter-rouge">평가</code>와 <code class="language-plaintext highlighter-rouge">실행</code>으로 나누어 처리합니다.</p>
+
+<p>이 때 소스코드 평가 과정에서 자바스크립트 엔진은 변수 선언을 포함한 모든 선언문(변수 선언문, 함수 선언문 등)을 소스코드에서 찾아서 먼저 실행합니다. 그리고 소스코드의 평가 과정이 끝나고 나면 선언문을 제외한 나머지 소스코드를 한 줄씩 순차적으로 실행하는 것입니다.</p>
+
+<p>이처럼 변수 선언문이 코드의 맨 위로 끌어 올려진 것처럼 동작하는 자바스크립트 고유의 특징을 변수 호이스팅(variable hoisting)이라고 합니다.</p>
+
+<p><br /></p>
+
+<h4 id="hoist">Hoist</h4>
+<!-- 
+
+
+
+<div class="row">
+    
+    <div  class="column"   >
+        <img class="single"
+             src="/assets/img/pexels/hoist.jpg"
+             alt="hoist.jpg">
+    </div>
+    
+</div>
+
+
+ -->
+<p><img src="https://5.imimg.com/data5/MH/DV/HT/SELLER-3965455/manual-chain-hoist-500x500.jpg" alt="" /></p>
+
+<p>이게 호이스트랩니다. 무언가를 끌어 올리는 장치져. 그래서 자바스크립트에서의 호이스팅에 대해 많이들 오해하는 부분이 있습니다. 많은 자료에서 호이스팅을 변수 및 함수 선언이 물리적으로 작성한 코드의 상단으로 옮겨지는 것으로 말하지만, 실제로는 그렇지 않다는 것입니다. 저 또한 실제 물리적으로도 올라가는줄 알았습니다.</p>
+
+<p>호이스팅은 실제로, 변수 및 함수 선언은 <strong>컴파일 단계에서 메모리에 저장</strong>되지만, 코드에서 입력한 위치와 동일한 부분에 코드가 위치하게 됩니다.</p>
+
+<p>또한, 자바스크립트는 초기화가 아닌 <strong>선언</strong>만 끌어올립니다(hoist). 만약 변수를 선언한 뒤 나중에 초기화시켜 사용한다면, 그 값은 undefined로 지정됩니다. 아래의 코드로 확인해 볼 수 있습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// x 초기화</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">y</span><span class="p">);</span> <span class="c1">// '1 undefined'</span>
+<span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+
+<span class="c1">// 아래 코드는 이전 코드와 같은 방식으로 동작합니다.</span>
+<span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// Initialize x</span>
+<span class="kd">var</span> <span class="nx">y</span><span class="p">;</span> <span class="c1">// Declare y</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">y</span><span class="p">);</span> <span class="c1">// '1 undefined'</span>
+<span class="nx">y</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// Initialize y</span>
+</code></pre></div></div>
+
+<p><br />
+<br />
+<br /></p>
+
+<h5 id="reference">Reference</h5>
+<h5 id="모던-자바스크립트-deep-dive자바스크립트의-기본-개념과-동작-원리"><a href="http://www.yes24.com/Product/Goods/92742567" target="_blank">모던 자바스크립트 Deep Dive:자바스크립트의 기본 개념과 동작 원리</a><br /></h5>
+<h5 id="mozilla-hoisting"><a href="https://developer.mozilla.org/ko/docs/Glossary/Hoisting" target="blank">Mozilla Hoisting</a></h5>
+:ET

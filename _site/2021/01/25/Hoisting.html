@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.3.0
+    Copyright 2016-2020 Sylhare
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="하고 싶은거 하는 블로그" href="https://yoon1fe.github.io/feed.xml"/>
+    
+    
+
+    <!-- KaTeX 0.12.0 -->
+    
+    <script defer src="/assets/js/vendor/katex.min.js"></script>
+    <script defer src="/assets/js/vendor/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    <!-- Mermaid 8.8.2 -->
+    
+    <!-- <script src=”https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.8.2/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script> -->
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple-Jekyll-Search 1.17.12 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://yoon1fe.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = '';
+    </script>
+
+    
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://yoon1fe.github.io/assets/img/pexels/whale.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Hoisting | 하고 싶은거 하는 블로그</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="Hoisting" />
+<meta name="author" content="yoon1fe" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://yoon1fe.github.io/2021/01/25/Hoisting.html" />
+<meta property="og:url" content="https://yoon1fe.github.io/2021/01/25/Hoisting.html" />
+<meta property="og:site_name" content="하고 싶은거 하는 블로그" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-01-25T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Hoisting" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"Hoisting","dateModified":"2021-01-25T00:00:00+09:00","datePublished":"2021-01-25T00:00:00+09:00","url":"https://yoon1fe.github.io/2021/01/25/Hoisting.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://yoon1fe.github.io/2021/01/25/Hoisting.html"},"author":{"@type":"Person","name":"yoon1fe"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link type="application/atom+xml" rel="alternate" href="https://yoon1fe.github.io/feed.xml" title="하고 싶은거 하는 블로그" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Hoisting">
+    <meta name="twitter:description" content="자바 스크립트는 인터프리터에 의해 한 줄씩 순차적으로 실행됩니다.그럼 다음 코드의 실행 결과는 어떻게 될까요?console.log(score); // undefinedvar score;  // 변수 선언문score란 변수가 선언되기 전에 참조를 하려고 합니다. 하지만 참조 에러(R...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://yoon1fe.github.io/assets/img/pexels/whale.jpeg">
+    <meta name="twitter:image:alt" content="Hoisting">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/cat.png" />
+		</a>
+        
+        <a class="site-title" aria-label="하고 싶은거 하는 블로그" href="/">
+        하고 싶은거 하는 블로그
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fa fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About" title="About" href="/about/">
+                     About 
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Gallery" title="Gallery" href="/gallery/">
+                     Gallery 
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                     Portfolio 
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fa fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fa fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article class="feature-image" >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="Hoisting" class="title">Hoisting</h1>
+      
+
+
+<div class="post-info"><a href="https://github.com/yoon1fe" target="_blank">
+      <img src="https://avatars2.githubusercontent.com/u/34064616?s=460&u=5dbe36813c7896f4cf11dd52a4cf6cefd8e41465&v=4">
+    
+    <p class="meta">
+      yoon1fe - January 25, 2021
+    </p></a></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <!--more-->
+
+<p>자바 스크립트는 인터프리터에 의해 한 줄씩 순차적으로 실행됩니다.
+<br />
+그럼 다음 코드의 실행 결과는 어떻게 될까요?</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">score</span><span class="p">);</span> <span class="c1">// undefined</span>
+
+<span class="kd">var</span> <span class="nx">score</span><span class="p">;</span>  <span class="c1">// 변수 선언문</span>
+</code></pre></div></div>
+<p><br />
+score란 변수가 선언되기 전에 참조를 하려고 합니다. 하지만 참조 에러(ReferenceError)가 발생하지 않고 <code class="language-plaintext highlighter-rouge">undefined</code>가 출력됩니다. 그 이유는 바로 <strong>변수 선언이 런타임 시점 전 단계에서 먼저 실행</strong>되기 때문입니다.</p>
+
+<p>자바스크립트 엔진은 소스코드를 한 줄씩 순차적으로 실행하기에 앞서 평가 과정을 거치며 코드를 실행하기 위한 준비를 합니다. 즉, 자바스크립트 엔진은 소스코드를 두 개의 과정, <code class="language-plaintext highlighter-rouge">평가</code>와 <code class="language-plaintext highlighter-rouge">실행</code>으로 나누어 처리합니다.</p>
+
+<p>이 때 소스코드 평가 과정에서 자바스크립트 엔진은 변수 선언을 포함한 모든 선언문(변수 선언문, 함수 선언문 등)을 소스코드에서 찾아서 먼저 실행합니다. 그리고 소스코드의 평가 과정이 끝나고 나면 선언문을 제외한 나머지 소스코드를 한 줄씩 순차적으로 실행하는 것입니다.</p>
+
+<p>이처럼 변수 선언문이 코드의 맨 위로 끌어 올려진 것처럼 동작하는 자바스크립트 고유의 특징을 <strong>변수 호이스팅(<code class="language-plaintext highlighter-rouge">variable hoisting</code>)</strong>이라고 합니다.</p>
+
+<p><br /></p>
+
+<p><img src="https://lk.co.kr/storage/lk/ko/catalogue/2018/01/12/gFcUcAi1KCJ7w4NCxdtVYi4j8IiIfQ0hsdds8vAA_sm.jpeg" alt="" width="45%" align="center" /></p>
+
+<p>이게 호이스트랩니다. 무언가를 끌어 올리는 장치져. 그래서 자바스크립트에서의 호이스팅에 대해 많이들 오해하는 부분이 있습니다.<br />
+많은 자료에서 호이스팅을 변수 및 함수 선언이 물리적으로 작성한 코드의 상단으로 옮겨지는 것으로 말하지만, 실제로는 그렇지 않다는 것입니다. 저 또한 실제 물리적으로도 올라가는줄 알았습니다.<br />
+하지만 호이스팅은 변수 및 함수 선언은 <strong>컴파일 단계에서 메모리에 저장</strong>되지만, 코드에서 입력한 위치와 동일한 부분에 코드가 위치하게 됩니다.</p>
+
+<p>또한, 자바스크립트는 초기화가 아닌 <strong>선언</strong>만 끌어올립니다(hoist). 만약 변수를 선언한 뒤 나중에 초기화시켜 사용한다면, 그 값은 undefined로 지정됩니다. 이는 아래의 코드로 확인해 볼 수 있습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// x 초기화</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">y</span><span class="p">);</span> <span class="c1">// '1 undefined'</span>
+<span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+
+<span class="c1">// 아래 코드는 이전 코드와 같은 방식으로 동작합니다.</span>
+<span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// Initialize x</span>
+<span class="kd">var</span> <span class="nx">y</span><span class="p">;</span> <span class="c1">// Declare y</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">y</span><span class="p">);</span> <span class="c1">// '1 undefined'</span>
+<span class="nx">y</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// Initialize y</span>
+</code></pre></div></div>
+
+<p><br />
+<br />
+<br /></p>
+
+<h5 id="reference">Reference</h5>
+<h5 id="모던-자바스크립트-deep-dive자바스크립트의-기본-개념과-동작-원리"><a href="http://www.yes24.com/Product/Goods/92742567" target="_blank">모던 자바스크립트 Deep Dive:자바스크립트의 기본 개념과 동작 원리</a><br /></h5>
+<h5 id="mozilla-hoisting"><a href="https://developer.mozilla.org/ko/docs/Glossary/Hoisting" target="blank">Mozilla Hoisting</a></h5>
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <div class="meta">Share</div>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fyoon1fe.github.io%2F2021%2F01%2F25%2FHoisting.html" target="_blank" title=" Facebook">
+			<i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
+			<span class="sr-only">Share on Facebook</span>
+		</a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=Hoisting%20https%3A%2F%2Fyoon1fe.github.io%2F2021%2F01%2F25%2FHoisting.html" target="_blank" title="">
+			<i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
+			<span class="sr-only">Tweet</span>
+		</a>
+        </li>
+            
+        <li>
+            <a href="http://www.reddit.com/submit?url=https://yoon1fe.github.io/2021/01/25/Hoisting.html&title=Hoisting%20%7C%20%ED%95%98%EA%B3%A0+%EC%8B%B6%EC%9D%80%EA%B1%B0+%ED%95%98%EB%8A%94+%EB%B8%94%EB%A1%9C%EA%B7%B8" target="_blank" title=" Reddit">
+			<i class="fa fa-reddit-square fa-2x" aria-hidden="true"></i>
+			<span class="sr-only">Share on Reddit</span>
+		</a>
+        </li>
+           
+        <li>
+            <a href="mailto:?subject=Hoisting%20%7C%20%ED%95%98%EA%B3%A0+%EC%8B%B6%EC%9D%80%EA%B1%B0+%ED%95%98%EB%8A%94+%EB%B8%94%EB%A1%9C%EA%B7%B8&body=:%20https://yoon1fe.github.io/2021/01/25/Hoisting.html" target="_blank" title="">
+			<i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i>
+			<span class="sr-only">Email</span>
+		</a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+<footer>
+  <div class="tag-list">
+    
+      <div class="meta">Tags</div>
+    
+
+    
+    <a class="button" href="/tags#JavaScript">
+      <p><i class="fa fa-tag fa-fw"></i> JavaScript</p>
+    </a>
+    
+    <a class="button" href="/tags#hoisting">
+      <p><i class="fa fa-tag fa-fw"></i> hoisting</p>
+    </a>
+    
+    <a class="button" href="/tags#js">
+      <p><i class="fa fa-tag fa-fw"></i> js</p>
+    </a>
+    
+  </div>
+</footer>
+
+
+</article>
+
+<!-- Disqus -->
+
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      var disqus_shortname = 'https-yoon1fe-github-io';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view comments.</noscript>
+</div>
+
+
+<!-- Post navigation -->
+
+  <div id="post-nav">
+    
+
+    
+    <div id="next-post">
+        <a alt="기술 교육 1주차" href="/2021/01/24/%EC%9E%85%EB%AC%B8%EA%B5%90%EC%9C%A1%ED%9A%8C%EA%B3%A0.html">
+            <p>Next post</p>
+            기술 교육 1주차
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!-- To change color of links in the page -->
+<style>
+  
+  .feature-image a { color: orange !important; }
+  div#post-nav a { color: orange !important; }
+  footer a { color: orange !important; }
+  .site-header nav a:hover {  color: orange !important; }
+  header#main { background-color: orange !important; }
+  
+
+  header#main {
+    background-repeat:no-repeat;
+  background-image: url('/assets/img/lineart.png');  
+  }
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed">
+        <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a href="https://github.com/sylhare" title="Follow on GitHub">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  </body>
+</html>
