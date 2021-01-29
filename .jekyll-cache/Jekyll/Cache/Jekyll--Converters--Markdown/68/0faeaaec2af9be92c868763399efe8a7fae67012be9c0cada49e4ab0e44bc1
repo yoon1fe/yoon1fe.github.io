@@ -1,4 +1,4 @@
-I"�<!--more-->
+I"�<!--more-->
 
 <p>자바 스크립트는 인터프리터에 의해 한 줄씩 순차적으로 실행됩니다.
 <br />
@@ -19,13 +19,16 @@ score란 변수가 선언되기 전에 참조를 하려고 합니다. 하지만 
 
 <p><br /></p>
 
-<p><img src="https://5.imimg.com/data5/MH/DV/HT/SELLER-3965455/manual-chain-hoist-500x500.jpg =1000x2000" alt="" /></p>
+<p><img src="https://lk.co.kr/storage/lk/ko/catalogue/2018/01/12/gFcUcAi1KCJ7w4NCxdtVYi4j8IiIfQ0hsdds8vAA_sm.jpeg" alt="" width="45%" align="center" /></p>
+<h5 id="출처-httpslkcokrstoragelkkocatalogue20180112gfcucai1kcj7w4ncxdtvyi4j8iiifq0hsdds8vaa_smjpeg">출처: https://lk.co.kr/storage/lk/ko/catalogue/2018/01/12/gFcUcAi1KCJ7w4NCxdtVYi4j8IiIfQ0hsdds8vAA_sm.jpeg</h5>
 
-<p>이게 호이스트랩니다. 무언가를 끌어 올리는 장치져. 그래서 자바스크립트에서의 호이스팅에 대해 많이들 오해하는 부분이 있습니다. 많은 자료에서 호이스팅을 변수 및 함수 선언이 물리적으로 작성한 코드의 상단으로 옮겨지는 것으로 말하지만, 실제로는 그렇지 않다는 것입니다. 저 또한 실제 물리적으로도 올라가는줄 알았습니다.</p>
+<p><br /></p>
 
-<p>호이스팅은 실제로, 변수 및 함수 선언은 <strong>컴파일 단계에서 메모리에 저장</strong>되지만, 코드에서 입력한 위치와 동일한 부분에 코드가 위치하게 됩니다.</p>
+<p>이게 호이스트랩니다. 무언가를 끌어 올리는 장치져. 그래서 자바스크립트에서의 호이스팅에 대해 많이들 오해하는 부분이 있습니다.<br />
+많은 자료에서 호이스팅을 변수 및 함수 선언이 물리적으로 작성한 코드의 상단으로 옮겨지는 것으로 말하지만, 실제로는 그렇지 않다는 것입니다. 저 또한 실제 물리적으로도 올라가는줄 알았습니다.<br />
+하지만 호이스팅은 변수 및 함수 선언은 <strong>컴파일 단계에서 메모리에 저장</strong>되지만, 코드에서 입력한 위치와 동일한 부분에 코드가 위치하게 됩니다.</p>
 
-<p>또한, 자바스크립트는 초기화가 아닌 <strong>선언</strong>만 끌어올립니다(hoist). 만약 변수를 선언한 뒤 나중에 초기화시켜 사용한다면, 그 값은 undefined로 지정됩니다. 아래의 코드로 확인해 볼 수 있습니다.</p>
+<p>또한, 자바스크립트는 초기화가 아닌 <strong>선언</strong>만 끌어올립니다(hoist). 만약 변수를 선언한 뒤 나중에 초기화시켜 사용한다면, 그 값은 undefined로 지정됩니다. 이는 아래의 코드로 확인해 볼 수 있습니다.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// x 초기화</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">y</span><span class="p">);</span> <span class="c1">// '1 undefined'</span>

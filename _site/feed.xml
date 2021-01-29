@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://yoon1fe.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://yoon1fe.github.io/" rel="alternate" type="text/html" /><updated>2021-01-25T14:22:29+09:00</updated><id>https://yoon1fe.github.io/feed.xml</id><title type="html">하고 싶은거 하는 블로그</title><entry><title type="html">Hoisting</title><link href="https://yoon1fe.github.io/2021/01/25/Hoisting.html" rel="alternate" type="text/html" title="Hoisting" /><published>2021-01-25T00:00:00+09:00</published><updated>2021-01-25T00:00:00+09:00</updated><id>https://yoon1fe.github.io/2021/01/25/Hoisting</id><content type="html" xml:base="https://yoon1fe.github.io/2021/01/25/Hoisting.html">&lt;!--more--&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://yoon1fe.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://yoon1fe.github.io/" rel="alternate" type="text/html" /><updated>2021-01-29T17:30:41+09:00</updated><id>https://yoon1fe.github.io/feed.xml</id><title type="html">하고 싶은거 하는 블로그</title><entry><title type="html">JavaScript | Hoisting</title><link href="https://yoon1fe.github.io/2021/01/25/Hoisting.html" rel="alternate" type="text/html" title="JavaScript | Hoisting" /><published>2021-01-25T00:00:00+09:00</published><updated>2021-01-25T00:00:00+09:00</updated><id>https://yoon1fe.github.io/2021/01/25/Hoisting</id><content type="html" xml:base="https://yoon1fe.github.io/2021/01/25/Hoisting.html">&lt;!--more--&gt;
 
 &lt;p&gt;자바 스크립트는 인터프리터에 의해 한 줄씩 순차적으로 실행됩니다.
 &lt;br /&gt;
@@ -20,6 +20,9 @@ score란 변수가 선언되기 전에 참조를 하려고 합니다. 하지만 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://lk.co.kr/storage/lk/ko/catalogue/2018/01/12/gFcUcAi1KCJ7w4NCxdtVYi4j8IiIfQ0hsdds8vAA_sm.jpeg&quot; alt=&quot;&quot; width=&quot;45%&quot; align=&quot;center&quot; /&gt;&lt;/p&gt;
+&lt;h5 id=&quot;출처-httpslkcokrstoragelkkocatalogue20180112gfcucai1kcj7w4ncxdtvyi4j8iiifq0hsdds8vaa_smjpeg&quot;&gt;출처: https://lk.co.kr/storage/lk/ko/catalogue/2018/01/12/gFcUcAi1KCJ7w4NCxdtVYi4j8IiIfQ0hsdds8vAA_sm.jpeg&lt;/h5&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;이게 호이스트랩니다. 무언가를 끌어 올리는 장치져. 그래서 자바스크립트에서의 호이스팅에 대해 많이들 오해하는 부분이 있습니다.&lt;br /&gt;
 많은 자료에서 호이스팅을 변수 및 함수 선언이 물리적으로 작성한 코드의 상단으로 옮겨지는 것으로 말하지만, 실제로는 그렇지 않다는 것입니다. 저 또한 실제 물리적으로도 올라가는줄 알았습니다.&lt;br /&gt;
