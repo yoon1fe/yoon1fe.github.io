@@ -55,20 +55,20 @@
     <meta property="og:type" content="website" />
     
     <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Base Camp 2주차 회고 | 하고 싶은거 하는 블로그</title>
+<title>Java Immutable &amp; Mutable | 하고 싶은거 하는 블로그</title>
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="Base Camp 2주차 회고" />
+<meta property="og:title" content="Java Immutable &amp; Mutable" />
 <meta name="author" content="yoon1fe" />
 <meta property="og:locale" content="en_US" />
-<link rel="canonical" href="https://yoon1fe.github.io/2021/02/01/BaseCamp-2%EC%A3%BC%EC%B0%A8.html" />
-<meta property="og:url" content="https://yoon1fe.github.io/2021/02/01/BaseCamp-2%EC%A3%BC%EC%B0%A8.html" />
+<link rel="canonical" href="https://yoon1fe.github.io/2021/02/19/Immutable-&-Mutable.html" />
+<meta property="og:url" content="https://yoon1fe.github.io/2021/02/19/Immutable-&-Mutable.html" />
 <meta property="og:site_name" content="하고 싶은거 하는 블로그" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-02-01T00:00:00+09:00" />
+<meta property="article:published_time" content="2021-02-19T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Base Camp 2주차 회고" />
+<meta property="twitter:title" content="Java Immutable &amp; Mutable" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","headline":"Base Camp 2주차 회고","dateModified":"2021-02-01T00:00:00+09:00","datePublished":"2021-02-01T00:00:00+09:00","url":"https://yoon1fe.github.io/2021/02/01/BaseCamp-2%EC%A3%BC%EC%B0%A8.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://yoon1fe.github.io/2021/02/01/BaseCamp-2%EC%A3%BC%EC%B0%A8.html"},"author":{"@type":"Person","name":"yoon1fe"},"@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","headline":"Java Immutable &amp; Mutable","dateModified":"2021-02-19T00:00:00+09:00","datePublished":"2021-02-19T00:00:00+09:00","url":"https://yoon1fe.github.io/2021/02/19/Immutable-&-Mutable.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://yoon1fe.github.io/2021/02/19/Immutable-&-Mutable.html"},"author":{"@type":"Person","name":"yoon1fe"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -76,12 +76,12 @@
     <link type="application/atom+xml" rel="alternate" href="https://yoon1fe.github.io/feed.xml" title="하고 싶은거 하는 블로그" />
 
     <!-- Twitter Cards -->
-    <meta name="twitter:title" content="Base Camp 2주차 회고">
-    <meta name="twitter:description" content="베이스 캠프 2주차이자 본격적인 기술 교육 첫 주가 끝이 났습니다.2주차에는 먼저 9주 동안 진행하게 될 프로젝트의 요구사항을 전달 받고 주로 기획하는데 많은 시간을 보내게 되었습니다. 기획 …하게된 프로젝트는 예매 서비스입니다. 저희는 그 중에서도 영화 예매 서비스를 하기로 했습...">
+    <meta name="twitter:title" content="Java | Immutable & Mutable">
+    <meta name="twitter:description" content="[불변 객체 (Immutable)]불변 객체란 한 번 객체가 생성되면 변하지 않는 객체를 의미합니다. Java의 대표적인 불변 객체는 String 클래스, Integer, Long과 같은 Wrapper Class (Boxed primitive object) 들이 있습니다.Strin...">
     
     <meta name="twitter:card" content="summary">
     <meta name="twitter:image" content="https://yoon1fe.github.io/assets/img/pexels/whale.jpeg">
-    <meta name="twitter:image:alt" content="Base Camp 2주차 회고">
+    <meta name="twitter:image:alt" content="Java | Immutable & Mutable">
 </head>
 
   <body>
@@ -190,7 +190,7 @@
   <header id="main" style="">
     <div class="title-padder">
       
-      <h1 id="Base+Camp+2%EC%A3%BC%EC%B0%A8+%ED%9A%8C%EA%B3%A0" class="title">Base Camp 2주차 회고</h1>
+      <h1 id="Java+%7C+Immutable+%26+Mutable" class="title">Java | Immutable & Mutable</h1>
       
 
 
@@ -198,7 +198,7 @@
       <img src="https://avatars2.githubusercontent.com/u/34064616?s=460&u=5dbe36813c7896f4cf11dd52a4cf6cefd8e41465&v=4">
     
     <p class="meta">
-      yoon1fe - February 1, 2021
+      yoon1fe - February 19, 2021
     </p></a></div>
 
       
@@ -209,37 +209,73 @@
   
       <!--more-->
 
-<p>베이스 캠프 2주차이자 본격적인 기술 교육 첫 주가 끝이 났습니다.<br />
-2주차에는 먼저 9주 동안 진행하게 될 프로젝트의 요구사항을 전달 받고 주로 기획하는데 많은 시간을 보내게 되었습니다. <br /></p>
+<h2 id="불변-객체-immutable">[불변 객체 (Immutable)]</h2>
+
+<p>불변 객체란 <strong>한 번 객체가 생성되면 변하지 않는 객체</strong>를 의미합니다. Java의 대표적인 불변 객체는 <strong>String</strong> 클래스, <strong>Integer, Long</strong>과 같은 Wrapper Class (Boxed primitive object) 들이 있습니다.</p>
 
 <p><br /></p>
-<h3 id="기획-">기획 …</h3>
+<h3 id="string-클래스">String 클래스</h3>
 
-<p>하게된 프로젝트는 예매 서비스입니다. 저희는 그 중에서도 영화 예매 서비스를 하기로 했습니다.<br />
-인생 기획도 잘 못하는데 기획이라니,,, 눈 앞이 캄캄했지만 그냥 일단 마음가는대로 한 번 해보게 되었습니다..</p>
+<p>String 클래스를 한 번 봅시다.</p>
 
-<p>영화 예매 서비스에 꼭 있어야 할 핵심 기능부터 부수적인 기능들까지… <br />
-사실 맨처음 기획에 일주일이란 시간이 주어졌을 때는 무슨 기획에 일주일이나 필요하나 했는디… 오오오산이었습니다 ^^;;
-생각하면 할수록 얘기해야할 부분이 생겨나는 신기한 경험을 할 수 있었습니다..</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="nc">String</span>
+    <span class="kd">implements</span> <span class="n">java</span><span class="o">.</span><span class="na">io</span><span class="o">.</span><span class="na">Serializable</span><span class="o">,</span> <span class="nc">Comparable</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;,</span> <span class="nc">CharSequence</span> <span class="o">{</span>
+    <span class="cm">/** The value is used for character storage. */</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kt">char</span> <span class="n">value</span><span class="o">[];</span>
+    
+	<span class="cm">/* ... */</span>
+    
+    <span class="kd">public</span> <span class="nf">String</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">value</span> <span class="o">=</span> <span class="s">""</span><span class="o">.</span><span class="na">value</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p><br />
+필드의 접근 제한자는 private이며, <strong>final</strong> 키워드를 통해 변수를 변경할 수 없도록 제한되어 있습니다. 이처럼 String 클래스는 Immutable하기 때문에 새로 수정할 때마다 기존 메모리를 버리고 새로운 메모리에 값을 넣어서 연결합니다. 따라서 <strong>메모리 누수가 발생할 수 있고, 새로운 객체를 계속 생성해야 하기 때문에 성능 저하가 발생</strong>할 수 있습니다.<br /><br /></p>
 
-<p>수요일에는 우리 나름대로 구색을 맞추고 멘토님께 사전 리뷰를 받는 시간이 있었습니다.<br />
-나름 머리를 열심히 짜내서 초안을 만들었었는데,, 정말 생각보다 훨씬 디테일하게 기획을 해야 했습니다…<br />
-그렇게 다시 하나부터 열까지 처음부터 생각하면서 기획했습니다.</p>
+<h4 id="그럼-string-클래스는-왜-immutable-할까요-">그럼, <strong>String 클래스는 왜 Immutable 할까요 ?</strong></h4>
+
+<p>String 변수의 reference를 여러 곳에서 갖고 있을 때, String이 mutable하다면 String 값 변경 시 이를 참조하는 모든 곳에서 변경된 object를 공유하게 됩니다. 이는 예상치 못한 문제를 만들어 낼 수 있으므로 Java의 String 클래스는 Immutable한 것입니다.</p>
 
 <p><br /></p>
-<h3 id="일정-추정-">일정 추정 …</h3>
 
-<p>목요일 오전에는 기민한 소프트웨어 개발과 일정 추정에 대한 교육이 있었습니다.<br /> 
-교육을 받으면서 플래닝 포커란 게임을 통해서 팀원들과 각 Feature 에 대해서 일정을 추정해보는 시간을 가졌습니다.<br />
-실제 현업에서도 이렇게 할까요 ?? 생판 처음 보는 방법이었고, 사실 일정 추정에 대한 경험도 전무했던 터라 새롭고 재밌는 경험이었습니다 히히</p>
+<h4 id="immutable한-객체를-사용함으로써-얻을-수-있는-이점">Immutable한 객체를 사용함으로써 얻을 수 있는 이점</h4>
+
+<p>Java에서는 cloneable 인터페이스를 구현함으로써 deep copy를 하지 않는 이상 모든 값이 reference로 전달되므로 같은 객체를 가리키게 됩니다.<br />
+가리키는 대상이 mutable하다면 필드를 변경하는 메소드를 호출했을 때 reference를 가지고 있는 모든 곳에서 내가 원하는 상태임을 보장할 수 없습니다. immutable한 객체를 사용하면 reference로 인한 다양한 side-effect를 미리 방지할 수 있습니다. 또한, 멀티 쓰레드 환경에서도 따로 동기화 처리할 필요없이 객체를 공유해도 되겠죠.</p>
+
+<blockquote>
+  <p>방어적 복사본을 만들 수고를 덜어주고, 다중 쓰레드 환경에서도 안전합니다.</p>
+</blockquote>
+
+<ul>
+  <li>JDK 1.5 버전부터는 String + String 연산이 새로운 메모리에 저장되는 성능 이슈를 개선하기 위해 컴파일 단계에서 StringBuilder로 컴파일된다고 합니다.!</li>
+</ul>
 
 <p><br /></p>
-<h3 id="다음주-월요일-">다음주 월요일 …</h3>
+<h2 id="가변-객체-mutable">[가변 객체 (Mutable)]</h2>
 
-<p>발표는 다행히 혜진님이 굉장히 잘 해주셨고 !! 멘토님께서도 도움주신 부분에 + α 로 준비를 잘했다고 말씀해주셨슴다 ^___^
-그래도 발표가 끝나고 다시 기획서를 보니 허술한 부분 투성입니다…. 진짜 생각해야 할 게 끝이 없구만유!!
-<br /><br />
-<strong>화이팅 !!</strong></p>
+<p>가변객체는 <strong>객체가 생성된 후에도 필드 값이 변경될 수 있는 객체</strong>입니다. 필드 값을 바꿀 수 있는 메소드를 제공합니다. 가변 객체의 예로는 String 클래스와 반대로 <strong>StringBuilder</strong> 클래스가 있습니다.</p>
+
+<p><strong>AbstractStringBuilder 클래스 (StringBuilder 클래스가 상속하는 추상 클래스)</strong></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">AbstractStringBuilder</span> <span class="kd">implements</span> <span class="nc">Appendable</span><span class="o">,</span> <span class="nc">CharSequence</span> <span class="o">{</span>
+    <span class="cm">/**
+     * The value is used for character storage.
+     */</span>
+    <span class="kt">char</span><span class="o">[]</span> <span class="n">value</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>StrinBuilder 클래스에서 문자열을 저장하는 변수 value는 mutable하기 때문에 String 클래스와 달리 final 키워드가 없답니다 !</p>
+
+<p><br />
+<br />
+<br /></p>
+
+<h5 id="reference">Reference</h5>
+<h5 id="java-immutable-class-불변-클래스"><a href="https://limkydev.tistory.com/68" target="_blank">[Java] Immutable Class (불변 클래스)</a></h5>
+<h5 id="mutable-과-immutable"><a href="https://hun-developer.tistory.com/2?category=772082" target="_blank">mutable 과 immutable</a></h5>
 
     
   </section>
@@ -252,28 +288,28 @@
         <div class="meta">Share</div>
         
         <li>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fyoon1fe.github.io%2F2021%2F02%2F01%2FBaseCamp-2%25EC%25A3%25BC%25EC%25B0%25A8.html" target="_blank" title=" Facebook">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fyoon1fe.github.io%2F2021%2F02%2F19%2FImmutable-%26-Mutable.html" target="_blank" title=" Facebook">
 			<i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Share on Facebook</span>
 		</a>
         </li>
          
         <li>
-            <a href="https://twitter.com/intent/tweet?text=Base+Camp+2%EC%A3%BC%EC%B0%A8+%ED%9A%8C%EA%B3%A0%20https%3A%2F%2Fyoon1fe.github.io%2F2021%2F02%2F01%2FBaseCamp-2%25EC%25A3%25BC%25EC%25B0%25A8.html" target="_blank" title="">
+            <a href="https://twitter.com/intent/tweet?text=Java+%7C+Immutable+%26+Mutable%20https%3A%2F%2Fyoon1fe.github.io%2F2021%2F02%2F19%2FImmutable-%26-Mutable.html" target="_blank" title="">
 			<i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Tweet</span>
 		</a>
         </li>
             
         <li>
-            <a href="http://www.reddit.com/submit?url=https://yoon1fe.github.io/2021/02/01/BaseCamp-2%EC%A3%BC%EC%B0%A8.html&title=Base+Camp+2%EC%A3%BC%EC%B0%A8+%ED%9A%8C%EA%B3%A0%20%7C%20%ED%95%98%EA%B3%A0+%EC%8B%B6%EC%9D%80%EA%B1%B0+%ED%95%98%EB%8A%94+%EB%B8%94%EB%A1%9C%EA%B7%B8" target="_blank" title=" Reddit">
+            <a href="http://www.reddit.com/submit?url=https://yoon1fe.github.io/2021/02/19/Immutable-&-Mutable.html&title=Java+%7C+Immutable+%26+Mutable%20%7C%20%ED%95%98%EA%B3%A0+%EC%8B%B6%EC%9D%80%EA%B1%B0+%ED%95%98%EB%8A%94+%EB%B8%94%EB%A1%9C%EA%B7%B8" target="_blank" title=" Reddit">
 			<i class="fa fa-reddit-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Share on Reddit</span>
 		</a>
         </li>
            
         <li>
-            <a href="mailto:?subject=Base+Camp+2%EC%A3%BC%EC%B0%A8+%ED%9A%8C%EA%B3%A0%20%7C%20%ED%95%98%EA%B3%A0+%EC%8B%B6%EC%9D%80%EA%B1%B0+%ED%95%98%EB%8A%94+%EB%B8%94%EB%A1%9C%EA%B7%B8&body=:%20https://yoon1fe.github.io/2021/02/01/BaseCamp-2%EC%A3%BC%EC%B0%A8.html" target="_blank" title="">
+            <a href="mailto:?subject=Java+%7C+Immutable+%26+Mutable%20%7C%20%ED%95%98%EA%B3%A0+%EC%8B%B6%EC%9D%80%EA%B1%B0+%ED%95%98%EB%8A%94+%EB%B8%94%EB%A1%9C%EA%B7%B8&body=:%20https://yoon1fe.github.io/2021/02/19/Immutable-&-Mutable.html" target="_blank" title="">
 			<i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Email</span>
 		</a>
@@ -297,8 +333,8 @@
     
 
     
-    <a class="button" href="/tags#%ED%9A%8C%EA%B3%A0">
-      <p><i class="fa fa-tag fa-fw"></i> 회고</p>
+    <a class="button" href="/tags#Java">
+      <p><i class="fa fa-tag fa-fw"></i> Java</p>
     </a>
     
   </div>
@@ -327,19 +363,12 @@
 
   <div id="post-nav">
     
-    <div id="previous-post">
-        <a alt="Java | Immutable & Mutable" href="/2021/02/19/Immutable-&-Mutable.html">
-            <p>Previous post</p>
-            Java | Immutable & Mutable
-        </a>
-    </div>
-    
 
     
     <div id="next-post">
-        <a alt="JavaScript | Hoisting" href="/2021/01/25/Hoisting.html">
+        <a alt="Base Camp 2주차 회고" href="/2021/02/01/BaseCamp-2%EC%A3%BC%EC%B0%A8.html">
             <p>Next post</p>
-            JavaScript | Hoisting
+            Base Camp 2주차 회고
         </a>
     </div>
     

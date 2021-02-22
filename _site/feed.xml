@@ -1,4 +1,72 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://yoon1fe.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://yoon1fe.github.io/" rel="alternate" type="text/html" /><updated>2021-02-07T14:36:14+09:00</updated><id>https://yoon1fe.github.io/feed.xml</id><title type="html">하고 싶은거 하는 블로그</title><entry><title type="html">Base Camp 2주차 회고</title><link href="https://yoon1fe.github.io/2021/02/01/BaseCamp-2%EC%A3%BC%EC%B0%A8.html" rel="alternate" type="text/html" title="Base Camp 2주차 회고" /><published>2021-02-01T00:00:00+09:00</published><updated>2021-02-01T00:00:00+09:00</updated><id>https://yoon1fe.github.io/2021/02/01/BaseCamp%202%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="https://yoon1fe.github.io/2021/02/01/BaseCamp-2%EC%A3%BC%EC%B0%A8.html">&lt;!--more--&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://yoon1fe.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://yoon1fe.github.io/" rel="alternate" type="text/html" /><updated>2021-02-22T19:07:54+09:00</updated><id>https://yoon1fe.github.io/feed.xml</id><title type="html">하고 싶은거 하는 블로그</title><entry><title type="html">Java | Immutable &amp;amp; Mutable</title><link href="https://yoon1fe.github.io/2021/02/19/Immutable-&-Mutable.html" rel="alternate" type="text/html" title="Java | Immutable &amp;amp; Mutable" /><published>2021-02-19T00:00:00+09:00</published><updated>2021-02-19T00:00:00+09:00</updated><id>https://yoon1fe.github.io/2021/02/19/Immutable%20&amp;%20Mutable</id><content type="html" xml:base="https://yoon1fe.github.io/2021/02/19/Immutable-&amp;-Mutable.html">&lt;!--more--&gt;
+
+&lt;h2 id=&quot;불변-객체-immutable&quot;&gt;[불변 객체 (Immutable)]&lt;/h2&gt;
+
+&lt;p&gt;불변 객체란 &lt;strong&gt;한 번 객체가 생성되면 변하지 않는 객체&lt;/strong&gt;를 의미합니다. Java의 대표적인 불변 객체는 &lt;strong&gt;String&lt;/strong&gt; 클래스, &lt;strong&gt;Integer, Long&lt;/strong&gt;과 같은 Wrapper Class (Boxed primitive object) 들이 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;string-클래스&quot;&gt;String 클래스&lt;/h3&gt;
+
+&lt;p&gt;String 클래스를 한 번 봅시다.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;java&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;io&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Serializable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Comparable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;CharSequence&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;cm&quot;&gt;/** The value is used for character storage. */&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[];&lt;/span&gt;
+    
+	&lt;span class=&quot;cm&quot;&gt;/* ... */&lt;/span&gt;
+    
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;
+필드의 접근 제한자는 private이며, &lt;strong&gt;final&lt;/strong&gt; 키워드를 통해 변수를 변경할 수 없도록 제한되어 있습니다. 이처럼 String 클래스는 Immutable하기 때문에 새로 수정할 때마다 기존 메모리를 버리고 새로운 메모리에 값을 넣어서 연결합니다. 따라서 &lt;strong&gt;메모리 누수가 발생할 수 있고, 새로운 객체를 계속 생성해야 하기 때문에 성능 저하가 발생&lt;/strong&gt;할 수 있습니다.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;그럼-string-클래스는-왜-immutable-할까요-&quot;&gt;그럼, &lt;strong&gt;String 클래스는 왜 Immutable 할까요 ?&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;String 변수의 reference를 여러 곳에서 갖고 있을 때, String이 mutable하다면 String 값 변경 시 이를 참조하는 모든 곳에서 변경된 object를 공유하게 됩니다. 이는 예상치 못한 문제를 만들어 낼 수 있으므로 Java의 String 클래스는 Immutable한 것입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;immutable한-객체를-사용함으로써-얻을-수-있는-이점&quot;&gt;Immutable한 객체를 사용함으로써 얻을 수 있는 이점&lt;/h4&gt;
+
+&lt;p&gt;Java에서는 cloneable 인터페이스를 구현함으로써 deep copy를 하지 않는 이상 모든 값이 reference로 전달되므로 같은 객체를 가리키게 됩니다.&lt;br /&gt;
+가리키는 대상이 mutable하다면 필드를 변경하는 메소드를 호출했을 때 reference를 가지고 있는 모든 곳에서 내가 원하는 상태임을 보장할 수 없습니다. immutable한 객체를 사용하면 reference로 인한 다양한 side-effect를 미리 방지할 수 있습니다. 또한, 멀티 쓰레드 환경에서도 따로 동기화 처리할 필요없이 객체를 공유해도 되겠죠.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;방어적 복사본을 만들 수고를 덜어주고, 다중 쓰레드 환경에서도 안전합니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;JDK 1.5 버전부터는 String + String 연산이 새로운 메모리에 저장되는 성능 이슈를 개선하기 위해 컴파일 단계에서 StringBuilder로 컴파일된다고 합니다.!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;가변-객체-mutable&quot;&gt;[가변 객체 (Mutable)]&lt;/h2&gt;
+
+&lt;p&gt;가변객체는 &lt;strong&gt;객체가 생성된 후에도 필드 값이 변경될 수 있는 객체&lt;/strong&gt;입니다. 필드 값을 바꿀 수 있는 메소드를 제공합니다. 가변 객체의 예로는 String 클래스와 반대로 &lt;strong&gt;StringBuilder&lt;/strong&gt; 클래스가 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;AbstractStringBuilder 클래스 (StringBuilder 클래스가 상속하는 추상 클래스)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;AbstractStringBuilder&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Appendable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;CharSequence&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;cm&quot;&gt;/**
+     * The value is used for character storage.
+     */&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;StrinBuilder 클래스에서 문자열을 저장하는 변수 value는 mutable하기 때문에 String 클래스와 달리 final 키워드가 없답니다 !&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;reference&quot;&gt;Reference&lt;/h5&gt;
+&lt;h5 id=&quot;java-immutable-class-불변-클래스&quot;&gt;&lt;a href=&quot;https://limkydev.tistory.com/68&quot; target=&quot;_blank&quot;&gt;[Java] Immutable Class (불변 클래스)&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&quot;mutable-과-immutable&quot;&gt;&lt;a href=&quot;https://hun-developer.tistory.com/2?category=772082&quot; target=&quot;_blank&quot;&gt;mutable 과 immutable&lt;/a&gt;&lt;/h5&gt;</content><author><name>yoon1fe</name></author><category term="Java" /><summary type="html"></summary></entry><entry><title type="html">Base Camp 2주차 회고</title><link href="https://yoon1fe.github.io/2021/02/01/BaseCamp-2%EC%A3%BC%EC%B0%A8.html" rel="alternate" type="text/html" title="Base Camp 2주차 회고" /><published>2021-02-01T00:00:00+09:00</published><updated>2021-02-01T00:00:00+09:00</updated><id>https://yoon1fe.github.io/2021/02/01/BaseCamp%202%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="https://yoon1fe.github.io/2021/02/01/BaseCamp-2%EC%A3%BC%EC%B0%A8.html">&lt;!--more--&gt;
 
 &lt;p&gt;베이스 캠프 2주차이자 본격적인 기술 교육 첫 주가 끝이 났습니다.&lt;br /&gt;
 2주차에는 먼저 9주 동안 진행하게 될 프로젝트의 요구사항을 전달 받고 주로 기획하는데 많은 시간을 보내게 되었습니다. &lt;br /&gt;&lt;/p&gt;
